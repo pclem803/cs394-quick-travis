@@ -8,6 +8,7 @@ import Banner from "./Banner";
 import { db, createUser } from "./firebaseHelpers";
 import { Block } from "rbx";
 
+
 const createItemList = (dbData, house) => {
   let items = dbData.houses[house].items;
   items = items ? Object.values(items) : [];
