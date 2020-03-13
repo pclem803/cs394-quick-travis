@@ -13,7 +13,7 @@ const WelcomeScreen = () => {
         <Title size={1} spaced>
           OneHouse
         </Title>
-        <Title subtitle size={4}>
+        <Title data-cy="welcome_message" subtitle size={4}>
           The easiest way to shop with your family and roomates!
         </Title>
 

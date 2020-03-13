@@ -20,7 +20,7 @@ const Banner = ({ user, house, setHouse, housesData, usersData }) => {
             {!user ? "OneHouse" : user.displayName}
           </Content>
         </Navbar.Item>
-        <Navbar.Burger />
+        <Navbar.Burger data-cy="burger"/>
       </Navbar.Brand>
       <Navbar.Menu>
         <Navbar.Segment align="start">
@@ -62,7 +62,9 @@ const Logout = ({ user, house }) => {
 };
 
 const SignIn = () => (
+  <div data-cy="sign_in_message">
   <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+  </div>
 );
 
 export default Banner;
