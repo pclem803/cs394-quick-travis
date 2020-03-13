@@ -13,7 +13,7 @@ const getTotalQuantity = neededBy => {
 };
 
 const ItemList = ({ items, user, selectedState, house }) => {
-  console.log(items)
+  console.log(user)
 
   // const handleNoteChange = (event, data) => {
   //   if (data && house) {

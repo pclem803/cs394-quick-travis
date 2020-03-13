@@ -36,6 +36,7 @@ const ListPage = ({ propItems, user, house  }) => {
   const [unit, setUnit] = useState("");
   const [selected, clearSelected, toggle] = useSelection();
   const [attachReceipt, setAttachReceipt] = useState(false);
+  
 
   const handleProductChange = event => {
     setProductName(event.target.value);
@@ -87,6 +88,7 @@ const ListPage = ({ propItems, user, house  }) => {
               <Field align="centered" kind="addons">
                 <Control expanded>
                   <Input
+                    data-testid = "productInput"
                     size="medium"
                     placeholder="Eggs"
                     value={productName}
