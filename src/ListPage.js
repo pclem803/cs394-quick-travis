@@ -31,7 +31,7 @@ const useSelection = () => {
   return [selected, clearSelected, toggle];
 };
 
-const ListPage = ({ propItems, user, house }) => {
+const ListPage = ({ propItems, user, house  }) => {
   const [productName, setProductName] = useState("");
   const [unit, setUnit] = useState("");
   const [selected, clearSelected, toggle] = useSelection();
@@ -46,9 +46,16 @@ const ListPage = ({ propItems, user, house }) => {
   };
 
   const handleSubmit = () => {
-    saveItem({ name: productName, unit: unit, user: user, houseName: house });
-    setProductName("");
-    setUnit("");
+    if (productName.length === 0){
+      setProductName("");
+      setUnit("");
+    }
+    else {
+      saveItem({ name: productName, unit: unit, user: user, houseName: house });
+      setProductName("");
+      setUnit("");
+    }
+    
   };
 
   if (user && house) {
@@ -95,7 +102,7 @@ const ListPage = ({ propItems, user, house }) => {
                   />
                 </Control>
                 <Control>
-                  <Button size="medium" color="link" onClick={handleSubmit}>
+                  <Button size="medium" color="link" onClick={handleSubmit} data-testid="add-button">
                     Add
                   </Button>
                 </Control>
